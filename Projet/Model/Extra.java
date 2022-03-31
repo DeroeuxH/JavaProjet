@@ -2,15 +2,17 @@ import java.util.*;
 
 public class Extra {
 
-    public Extra() {
+    public Extra(int qte, Sejour sej) {
+        quantite = qte;
+        sjr=sej;
     }
 
-    public int quantité;
-    public Sejour sej;
+    public int quantite;
+    public Sejour sjr;
 
     public Vector<Produit> listeExtra = new Vector<Produit>();
 
-    public void add() {
+    public void addPdt() {
         
     }
 

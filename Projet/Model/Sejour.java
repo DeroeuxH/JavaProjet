@@ -1,47 +1,27 @@
 
 import java.util.*;
 
-/**
- * 
- */
 public class Sejour {
 
-    /**
-     * Default constructor
-     */
-    public Sejour() {
+    public Sejour(Reservation rsv) {
+        res=rsv;
+        debut=res.debut;
+        fin=res.fin;
+        numero=res.numero;
     }
 
-    /**
-     * 
-     */
     public Date debut;
 
-    /**
-     * 
-     */
     public Date fin;
 
-    /**
-     * 
-     */
     public int numero;
 
-    /**
-     * 
-     */
     public Reservation res;
 
-    /**
-     * 
-     */
-    public Set<Extra> listeExtra;
+    public Vector<Extra> listeExtra=new Vector<Extra>();
 
-    /**
-     * 
-     */
-    public void add() {
-        // TODO implement here
+    public void addSjr() {
+
     }
 
 }

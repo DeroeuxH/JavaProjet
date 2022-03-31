@@ -3,16 +3,17 @@ import java.util.*;
 
 public class Client extends Personne{
 
-    public Client() {
+    public Client(String n, String p) {
+        super(n,p);
     }
 
     public Vector<Reservation> listeRes = new Vector<Reservation>();
 
-    public void add(Reservation r) {
+    public void addRes(Reservation r) {
 
     }
 
-    public void suppr(Reservation r) {
+    public void supprRes(Reservation r) {
         
     }
 

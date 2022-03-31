@@ -3,96 +3,52 @@ import java.util.*;
 
 public class Reservation {
 
-    /**
-     * Default constructor
-     */
-    public Reservation() {
+    public Reservation(Date dbt, Date fn, Client ct, Sejour sej,Receptionniste rec,Chambre chb) {
+        debut=dbt;
+        fin=fn;
+        clt=ct;
+        sjr=sej;
+        rcp=rec;
+        chbr=chb;
+        numero=chbr.numero;
     }
 
-    /**
-     * 
-     */
     public Date debut;
 
-    /**
-     * 
-     */
     public Date fin;
 
-    /**
-     * 
-     */
     public int numero;
 
-    /**
-     * 
-     */
     public Client clt;
 
-    /**
-     * 
-     */
-    public Sejour sej;
+    public Sejour sjr;
 
-    /**
-     * 
-     */
     public Receptionniste rcp;
 
-    /**
-     * 
-     */
-    public Chambre listeChanbre;
+    public Chambre chbr;
 
-    /**
-     * 
-     */
-    public void set_debut() {
-         
+    public void setDebut() {
+
     }
 
-    /**
-     * 
-     */
-    public void set_fin() {
-         
+    public void setFin() {
+
     }
 
-         
     public void isfree(Date debut, Date fin) {
-         
+
     }
 
-    /**
-     * @param int numero 
-     * @param set_debut 
-     * @param set_fin
-     */
     public void add(int numero, Date set_debut, Date set_fin) {
-         
+
     }
 
-    /**
-     * @param int number 
-     * @param date begin 
-     * @param date end
-     */
-    public void Reservation(int number, Date begin, Date end) {
-         
-    }
-
-    /**
-     * 
-     */
     public void annulation() {
-         
+
     }
 
-    /**
-     * 
-     */
-    public void set_num() {
-         
+    public void setNum() {
+
     }
 
 }
