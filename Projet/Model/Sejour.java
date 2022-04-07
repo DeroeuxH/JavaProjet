@@ -1,4 +1,4 @@
-
+import java.time.*;
 import java.util.*;
 
 public class Sejour {
@@ -10,12 +10,9 @@ public class Sejour {
         numero = res.numero;
     }
 
-    public Date debut, fin;
-
+    public LocalDate debut, fin;
     public int numero;
-
     public Reservation res;
-
     public Vector<Extra> listeExtra = new Vector<Extra>();
 
     public void addSjr() {

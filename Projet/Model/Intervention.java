@@ -1,14 +1,15 @@
 import java.util.*;
+import java.time.*;
 
 public class Intervention {
 
-    public Intervention(Date d, AgentEntretien Ia, Chambre Ic) {
+    public Intervention(LocalDate d, AgentEntretien Ia, Chambre Ic) {
         date = d;
         interA = Ia;
         interC = Ic;
     }
 
-    public Date date;
+    public LocalDate date;
     public AgentEntretien interA;
     public Chambre interC;
 

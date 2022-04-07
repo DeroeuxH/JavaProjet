@@ -13,6 +13,6 @@ public class Chambre {
 
     public int numero, etage, prix;
     public Type type;
-    public Vector<Reservation> listRes=new Vector<Reservation>();
+    public Vector<Reservation> listRes = new Vector<Reservation>();
     public Vector<Intervention> listeChambre = new Vector<Intervention>();
 }
