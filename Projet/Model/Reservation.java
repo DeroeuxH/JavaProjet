@@ -3,16 +3,14 @@ import java.time.*;
 
 public class Reservation {
 
-    public Reservation(LocalDate dbt, LocalDate fn, Client ct, Sejour sej, Receptionniste rec, Chambre chb) {
-        if (isfree()) {
+    public Reservation(LocalDate dbt, LocalDate fn, Client ct, Sejour sej, Receptionniste rcpst, Chambre chb) {
             debut = dbt;
             fin = fn;
             clt = ct;
             sjr = sej;
-            rcp = rec;
+            rcp = rcpst;
             chbr = chb;
             numero = chbr.numero;
-        }
     }
 
     public LocalDate debut, fin;
@@ -33,11 +31,7 @@ public class Reservation {
         return true;
     }
 
-    public void annulation() {
-
-    }
-
-    public boolean isIntersect(LocalDate dbt, LocalDate fn) { // verifie si intervale donné ne sont pas compatible yeah
+    private boolean isIntersect(LocalDate dbt, LocalDate fn) { // verifie si intervale donné ne sont pas compatible
         if (dbt.isAfter(debut) && dbt.isBefore(fin))
             return true;
         if (fn.isAfter(debut) && fn.isBefore(fin))
