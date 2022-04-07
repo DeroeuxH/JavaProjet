@@ -11,12 +11,12 @@ public class Chambre {
         type = typ;
         reserC = res;
     }
-    
+
     public int numero;
     public int etage;
     public int prix;
     public boolean libre;
     public Type type;
     public Reservation reserC;
-    public Vector<Intervention> listeChambre=new Vector<Intervention>();
+    public Vector<Intervention> listeChambre = new Vector<Intervention>();
 }

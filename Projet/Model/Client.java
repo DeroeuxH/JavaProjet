@@ -1,10 +1,10 @@
 
 import java.util.*;
 
-public class Client extends Personne{
+public class Client extends Personne {
 
     public Client(String n, String p) {
-        super(n,p);
+        super(n, p);
     }
 
     public Vector<Reservation> listeRes = new Vector<Reservation>();
@@ -14,7 +14,7 @@ public class Client extends Personne{
     }
 
     public void supprRes(Reservation r) {
-        
+
     }
 
 }

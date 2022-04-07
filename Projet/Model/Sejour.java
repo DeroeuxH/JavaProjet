@@ -4,10 +4,10 @@ import java.util.*;
 public class Sejour {
 
     public Sejour(Reservation rsv) {
-        res=rsv;
-        debut=res.debut;
-        fin=res.fin;
-        numero=res.numero;
+        res = rsv;
+        debut = res.debut;
+        fin = res.fin;
+        numero = res.numero;
     }
 
     public Date debut;
@@ -18,7 +18,7 @@ public class Sejour {
 
     public Reservation res;
 
-    public Vector<Extra> listeExtra=new Vector<Extra>();
+    public Vector<Extra> listeExtra = new Vector<Extra>();
 
     public void addSjr() {
 

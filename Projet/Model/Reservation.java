@@ -3,14 +3,14 @@ import java.util.*;
 
 public class Reservation {
 
-    public Reservation(Date dbt, Date fn, Client ct, Sejour sej,Receptionniste rec,Chambre chb) {
-        debut=dbt;
-        fin=fn;
-        clt=ct;
-        sjr=sej;
-        rcp=rec;
-        chbr=chb;
-        numero=chbr.numero;
+    public Reservation(Date dbt, Date fn, Client ct, Sejour sej, Receptionniste rec, Chambre chb) {
+        debut = dbt;
+        fin = fn;
+        clt = ct;
+        sjr = sej;
+        rcp = rec;
+        chbr = chb;
+        numero = chbr.numero;
     }
 
     public Date debut;
