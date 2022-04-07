@@ -4,7 +4,7 @@ import java.time.*;
 public class Reservation {
 
     public Reservation(LocalDate dbt, LocalDate fn, Client ct, Sejour sej, Receptionniste rec, Chambre chb) {
-        if (isfree() == true) {
+        if (isfree()) {
             debut = dbt;
             fin = fn;
             clt = ct;
@@ -26,7 +26,7 @@ public class Reservation {
         for (int i = 0; i < chbr.listRes.size(); i++) {
             LocalDate dbt = chbr.listRes.get(i).debut;
             LocalDate fn = chbr.listRes.get(i).fin;
-            if (isIntersect(dbt, fn) == true) {
+            if (isIntersect(dbt, fn)) {
                 return false;
             }
         }
