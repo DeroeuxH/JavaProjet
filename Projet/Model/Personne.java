@@ -7,7 +7,6 @@ public class Personne {
         prenom = p;
     }
 
-    public String nom;
-    public String prenom;
+    public String nom, prenom;
 
 }

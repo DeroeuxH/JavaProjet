@@ -3,20 +3,16 @@ import java.util.*;
 
 public class Chambre {
 
-    public Chambre(int num, int etg, int prx, Type typ, Reservation res) {
+    public Chambre(int num, int etg, int prx, Type typ) {
         numero = num;
         etage = etg;
         prix = prx;
-        libre = true;
         type = typ;
-        reserC = res;
+
     }
 
-    public int numero;
-    public int etage;
-    public int prix;
-    public boolean libre;
+    public int numero, etage, prix;
     public Type type;
-    public Reservation reserC;
+    public Vector<Reservation> listRes=new Vector<Reservation>();
     public Vector<Intervention> listeChambre = new Vector<Intervention>();
 }

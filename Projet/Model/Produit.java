@@ -10,8 +10,7 @@ public class Produit {
     }
 
     public String nom;
-    public int prix;
-    public int quantite;
+    public int prix, quantite;
 
     public Vector<Extra> listePdt = new Vector<Extra>();
 

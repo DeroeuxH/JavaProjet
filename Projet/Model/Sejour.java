@@ -10,9 +10,7 @@ public class Sejour {
         numero = res.numero;
     }
 
-    public Date debut;
-
-    public Date fin;
+    public Date debut, fin;
 
     public int numero;
 
