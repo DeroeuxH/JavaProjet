@@ -1,4 +1,4 @@
-
+package Model;
 import java.util.*;
 
 public class Client extends Personne {

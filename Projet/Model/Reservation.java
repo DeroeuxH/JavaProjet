@@ -1,3 +1,4 @@
+package Model;
 import java.time.*;
 
 public class Reservation {
