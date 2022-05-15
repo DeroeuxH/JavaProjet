@@ -1,3 +1,4 @@
+/*
 package Vue;
 
 import java.awt.*;
@@ -24,3 +25,4 @@ class hwSwing {
         contentPane.add(mainToolBar,BorderLayout.NORTH);
     }
 }
+*/
