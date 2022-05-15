@@ -22,6 +22,7 @@ public class Chambre {
         Reservation res = new Reservation(dbt, fn, ct, sej, rcpst, Chambre.this);
         res.isfree();
         listRes.add(res);
+        ct.addRes(res);
     }
 
     public void annulRes(LocalDate dbt, LocalDate fn) {

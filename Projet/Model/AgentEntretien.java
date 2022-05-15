@@ -1,4 +1,5 @@
 package Model;
+import java.time.LocalDate;
 import java.util.*;
 
 public class AgentEntretien extends Personne {
@@ -9,8 +10,8 @@ public class AgentEntretien extends Personne {
 
     public Vector<Intervention> listeInter = new Vector<Intervention>();
 
-    public void addInter() {
-
+    public void addInter(LocalDate d, Chambre c) {
+        listeInter.add(new Intervention(d, this, c));
     }
 
 }

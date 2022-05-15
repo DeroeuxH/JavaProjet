@@ -12,6 +12,9 @@ public class Produit {
     public String nom;
     public int prix, quantite;
 
-    public Vector<Extra> listePdt = new Vector<Extra>();
+    /*public Vector<Extra> listePdt = new Vector<Extra>();
 
+    public void addPdt(){
+        listePdt.add(this);
+    }*/
 }

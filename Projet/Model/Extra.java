@@ -13,8 +13,8 @@ public class Extra {
 
     public Vector<Produit> listeExtra = new Vector<Produit>();
 
-    public void addPdt() {
-
+    public void addPdt(Produit p) {
+        listeExtra.add(p);
     }
 
 }
