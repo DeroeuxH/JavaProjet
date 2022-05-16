@@ -4,7 +4,8 @@ import java.time.*;
 
 public class Chambre {
 
-    public Chambre(int num, int etg, int prx, Type typ) {
+    public Chambre(String n, int num, int etg, int prx, Type typ) {
+        nom = n;
         numero = num;
         etage = etg;
         prix = prx;
@@ -12,6 +13,7 @@ public class Chambre {
 
     }
 
+    String nom;
     public int numero, etage, prix;
     public Type type;
     public Vector<Reservation> listRes = new Vector<Reservation>();

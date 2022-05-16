@@ -14,7 +14,7 @@ public class Hotel {
     }
 
     public void addChambre(int num, int etg, int prx, Type typ) {
-        listeChambre.add(new Chambre(num, etg, prx, typ));
+        listeChambre.add(new Chambre("lol",num, etg, prx, typ));
     }
 
     public void addClient(String n, String p) {
@@ -27,6 +27,19 @@ public class Hotel {
 
     public void addReceptionniste(String n, String p) {
         listeRcpst.add(new Receptionniste(n, p));
+    }
+
+    public Vector<Client> getVectorClient(){
+        return listeClient;
+    }
+    public Vector<Chambre> getVectorChambre(){
+        return listeChambre;
+    }
+    public Vector<AgentEntretien> getVectorAgentEntretien(){
+        return listeAgeEnt;
+    }
+    public Vector<Receptionniste> getVectorReceptionniste(){
+        return listeRcpst;
     }
 
 }
