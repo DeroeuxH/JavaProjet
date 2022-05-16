@@ -11,9 +11,9 @@ public class MyJMenu {
 		JFrame fen = new JFrame("Interface Hôtel");
 		JPanel panel = new JPanel();
 		// création d'un panneau (JPanel)
-		panel.setLayout(null);
 		fen.setSize((new Dimension(1280,720)));
 		fen.setContentPane(panel);
+		panel.setLayout(null);
 
 		// création de la barre des menus
 		JMenuBar myMenuBar = new JMenuBar();
@@ -21,7 +21,7 @@ public class MyJMenu {
 		// Ajout de la barre de menus au JPanel
 		panel.add(myMenuBar);
 
-		// Positionnement de la barre des menus avec la m"thode setBounds()
+		// Positionnement de la barre des menus avec la méthode setBounds()
 		myMenuBar.setBounds(0, 0, 1280, 30);
 
 		// Création du menu Personnel
