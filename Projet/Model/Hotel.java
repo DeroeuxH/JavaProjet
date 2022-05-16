@@ -14,7 +14,7 @@ public class Hotel {
     }
 
     public void addChambre(int num, int etg, int prx, Type typ) {
-        listeChambre.add(new Chambre("lol",num, etg, prx, typ));
+        listeChambre.add(new Chambre(num, etg, prx, typ));
     }
 
     public void addClient(String n, String p) {

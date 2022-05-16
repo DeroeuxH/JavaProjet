@@ -13,4 +13,16 @@ public class Intervention {
     public AgentEntretien interA;
     public Chambre interC;
 
+    public LocalDate getDate(){
+        return date;
+    }
+    
+    public AgentEntretien getAgent(){
+        return interA;
+    }
+    
+    public Chambre getChambre(){
+        return interC;
+    }
+    
 }

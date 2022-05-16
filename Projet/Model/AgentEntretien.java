@@ -14,4 +14,15 @@ public class AgentEntretien extends Personne {
         listeInter.add(new Intervention(d, this, c));
     }
 
+    public String getName(){
+        return nom;
+    }
+
+    public String getFirstName(){
+        return prenom;
+    }
+
+    public Vector<Intervention> getListe(){
+        return listeInter;
+    }
 }

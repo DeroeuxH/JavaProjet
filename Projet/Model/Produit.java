@@ -17,4 +17,20 @@ public class Produit {
     public void addPdt(){
         listePdt.add(this);
     }*/
+
+    public String getName(){
+        return nom;
+    }
+
+    public int getPrix(){
+        return prix;
+    }
+
+    public int getQte(){
+        return quantite;
+    }
+
+    /*public Vector<Extra> getExtra(){
+        return listePdt;
+    }*/
 }

@@ -4,8 +4,7 @@ import java.time.*;
 
 public class Chambre {
 
-    public Chambre(String n, int num, int etg, int prx, Type typ) {
-        nom = n;
+    public Chambre(int num, int etg, int prx, Type typ) {
         numero = num;
         etage = etg;
         prix = prx;
@@ -13,7 +12,6 @@ public class Chambre {
 
     }
 
-    String nom;
     public int numero, etage, prix;
     public Type type;
     public Vector<Reservation> listRes = new Vector<Reservation>();
@@ -32,5 +30,29 @@ public class Chambre {
             if (listRes.get(i).debut.equals(dbt) && listRes.get(i).fin.equals(fn))
                 listRes.remove(i);
         }
+    }
+
+    public int getNum(){
+        return numero;
+    }
+
+    public int getEtg(){
+        return etage;
+    }
+
+    public int getPrix(){
+        return prix;
+    }
+
+    public Type getType(){
+        return type;
+    }
+
+    public Vector<Intervention> getInter(){
+        return listeChambre;
+    }
+
+    public Vector<Reservation> getRes(){
+        return listRes;
     }
 }

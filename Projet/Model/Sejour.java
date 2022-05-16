@@ -1,4 +1,5 @@
 package Model;
+
 import java.time.*;
 import java.util.*;
 
@@ -18,6 +19,26 @@ public class Sejour {
 
     public void addSjr() {
 
+    }
+
+    public LocalDate getDeb() {
+        return debut;
+    }
+
+    public LocalDate getFin() {
+        return fin;
+    }
+
+    public int getNum() {
+        return numero;
+    }
+
+    public Reservation getRes() {
+        return res;
+    }
+
+    public Vector<Extra> getExtra() {
+        return listeExtra;
     }
 
 }

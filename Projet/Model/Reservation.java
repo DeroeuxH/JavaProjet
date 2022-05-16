@@ -42,4 +42,32 @@ public class Reservation {
             return true;
         return false;
     }
+
+    public LocalDate getFin(){
+        return fin;
+    }
+
+    public LocalDate getDeb(){
+        return debut;
+    }
+
+    public int getNum(){
+        return numero;
+    }
+
+    public Client getClient(){
+        return clt;
+    }
+
+    public Sejour getSejour(){
+        return sjr;
+    }
+
+    public Receptionniste getReceptionniste(){
+        return rcp;
+    }
+
+    public Chambre getChambre(){
+        return chbr;
+    }
 }

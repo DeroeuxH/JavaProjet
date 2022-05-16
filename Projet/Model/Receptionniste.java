@@ -12,4 +12,16 @@ public class Receptionniste extends Personne {
     public void addRes() {
     }
 
+    public String getName(){
+        return nom;
+    }
+
+    public String getFirstName(){
+        return prenom;
+    }
+
+    public Vector<Reservation> getRes(){
+        return listeRes;
+    }
+
 }

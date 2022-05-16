@@ -18,4 +18,20 @@ public class Client extends Personne {
         r.chbr.annulRes(r.debut, r.fin);
     }
 
+    public Client getClient(){
+        return this;
+    }
+
+    public String getName(){
+        return nom;
+    }
+
+    public String getFirstName(){
+        return prenom;
+    }
+
+    public Vector<Reservation> getRes(){
+        return listeRes;
+    }
+
 }

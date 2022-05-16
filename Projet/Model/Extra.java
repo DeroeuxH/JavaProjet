@@ -17,4 +17,16 @@ public class Extra {
         listeExtra.add(p);
     }
 
+    public int getQte(){
+        return quantite;
+    }
+
+    public Sejour getSejour(){
+        return sjr;
+    }
+
+    public Vector<Produit> getExtra(){
+        return listeExtra;
+    }
+
 }
