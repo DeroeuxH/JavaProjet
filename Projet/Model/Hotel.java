@@ -22,6 +22,10 @@ public class Hotel {
         listeClient.add(new Client(n, p));
     }
 
+    public void supClient(Client clt) {
+        listeClient.remove(clt);
+    }
+
     public void addAgentEntretien(String n, String p) {
         listeAgeEnt.add(new AgentEntretien(n, p));
     }

@@ -26,7 +26,7 @@ public class Ctrl implements ActionListener {
             else if (JOptionPane.showInputDialog(frame,"Veuillez entrer le type").equals("PRESIDENTIELLE")) {i=1; t = "PRESIDENTIELLE";}
             else JOptionPane.showMessageDialog(frame,"le type entré n'est pas correct, veuillez écrire: NORMAL,SIMPLE,DOUBLE ou PRESIDENTIELLE");
         }
-        Chambre(num,etg,prx,t);
+        //Chambre(num,etg,prx,t);
     }
 
     public static void modChambreButtonClicked(ActionEvent e){
@@ -42,10 +42,10 @@ public class Ctrl implements ActionListener {
             else if (JOptionPane.showInputDialog(frame,"Veuillez entrer le type").equals("PRESIDENTIELLE")) {i=1; t = "PRESIDENTIELLE";}
             else JOptionPane.showMessageDialog(frame,"le type entré n'est pas correct, veuillez écrire: NORMAL,SIMPLE,DOUBLE ou PRESIDENTIELLE");
         }
-        setNum(num);
-        setEtg(etg);
-        setPrix(prx);
-        setType(t);
+        //setNum(num);
+        //setEtg(etg);
+        //setPrix(prx);
+        //setType(t);
     }
 
     //Gestion Clients
