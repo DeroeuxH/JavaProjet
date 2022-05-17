@@ -1,5 +1,6 @@
 package Controller;
 
+import javax.management.modelmbean.ModelMBeanNotificationInfo;
 import javax.swing.*;
 import javax.swing.event.MouseInputListener;
 
@@ -134,10 +135,11 @@ public class Ctrl implements ActionListener {
                 return;
             }
         }
-        String client = JOptionPane.showInputDialog(frame, "Veuillez entrer le nom du client");
+        String nClient = JOptionPane.showInputDialog(frame, "Veuillez entrer le nom du client");
+        String pClient = JOptionPane.showInputDialog(frame, "Veuillez entrer le prénom du client");
         Client ct = null;
         for (int i=0; i<h.getVectorClient().size();i++){
-            if(h.getVectorClient().get(i).nom.equals(client)){
+            if(h.getVectorClient().get(i).nom.equals(nClient) && h.getVectorClient().get(i).prenom.equals(pClient)){
                 ct = h.getVectorClient().get(i);
                 break;
             }
@@ -153,11 +155,62 @@ public class Ctrl implements ActionListener {
     }
 
     public static void modReservationButtonClicked(ActionEvent e,Hotel h){
-
+        JFrame frame = new JFrame();
+        String result;
+        int chambre = Integer.parseInt(JOptionPane.showInputDialog(frame, "Veuillez entrer le numéro de la chambre pour laquelle vous souhaitez modifier la réservation"));
+        Chambre c = h.getVectorChambre().get(chambre);
+        LocalDate dbt = LocalDate.parse(JOptionPane.showInputDialog(frame, "Veuillez entrer la date (année-mois-jour) de début du séjour sous ce format: 2020-01-08"));
+        LocalDate fn = LocalDate.parse(JOptionPane.showInputDialog(frame, "Veuillez entrer la date (année-mois-jour) de fin du séjour sous ce format: 2020-01-08"));
+        for (int i = 0; i < c.listeRes.size(); i++) {
+            if (c.listeRes.get(i).debut.equals(dbt) && c.listeRes.get(i).fin.equals(fn)) {
+                JOptionPane.showMessageDialog(frame, "La réservation a bien été trouvé");
+            }
+            else if (i==c.listeRes.size()-1){
+                JOptionPane.showMessageDialog(frame, "La réservation demandé n'existe pas");
+                return;
+            }
+        }
+        JOptionPane.showMessageDialog(frame, "Vous allez à présent procéder à la modification");
+        dbt = LocalDate.parse(JOptionPane.showInputDialog(frame, "Veuillez entrer la date (année-mois-jour) de début du séjour sous ce format: 2020-01-08"));
+        fn = LocalDate.parse(JOptionPane.showInputDialog(frame, "Veuillez entrer la date (année-mois-jour) de fin du séjour sous ce format: 2020-01-08"));
+        
+        String receptionniste = JOptionPane.showInputDialog(frame, "Veuillez entrer le nom du réceptionniste");
+        Receptionniste rcpst = null;
+        for (int i=0; i<h.getVectorReceptionniste().size();i++){
+            if(h.getVectorReceptionniste().get(i).nom.equals(receptionniste)){
+                rcpst = h.getVectorReceptionniste().get(i);
+                break;
+            }
+            else if (i==h.getVectorReceptionniste().size()-1){
+                JOptionPane.showMessageDialog(frame,"Erreur le réceptionniste n'existe pas");
+                return;
+            }
+        }
+        String nClient = JOptionPane.showInputDialog(frame, "Veuillez entrer le nom du client");
+        String pClient = JOptionPane.showInputDialog(frame, "Veuillez entrer le prénom du client");
+        Client ct = null;
+        for (int i=0; i<h.getVectorClient().size();i++){
+            if(h.getVectorClient().get(i).nom.equals(nClient) && h.getVectorClient().get(i).prenom.equals(pClient)){
+                ct = h.getVectorClient().get(i);
+                break;
+            }
+            else if (i==h.getVectorReceptionniste().size()-1){
+                JOptionPane.showMessageDialog(frame,"Erreur le client n'existe pas");
+                return;
+            }
+        }
+        result = c.addRes(dbt, fn, ct, rcpst);
+        JOptionPane.showMessageDialog(frame,result);
     }
 
     public static void delReservationButtonClicked(ActionEvent e, Hotel h){
-
+        JFrame frame = new JFrame();
+        int chambre = Integer.parseInt(JOptionPane.showInputDialog(frame, "Veuillez entrer le numéro de la chambre pour laquelle vous souhaitez annuler une réservation"));
+        Chambre c = h.getVectorChambre().get(chambre);
+        LocalDate dbt = LocalDate.parse(JOptionPane.showInputDialog(frame, "Veuillez entrer la date (année-mois-jour) de début du séjour sous ce format: 2020-01-08"));
+        LocalDate fn = LocalDate.parse(JOptionPane.showInputDialog(frame, "Veuillez entrer la date (année-mois-jour) de fin du séjour sous ce format: 2020-01-08"));
+        String result = c.annulRes(dbt,fn);
+        JOptionPane.showMessageDialog(frame,result);
     }
 
     //gestion séjour
@@ -180,7 +233,5 @@ public class Ctrl implements ActionListener {
     //nécessaire pour pas d'erreur mais inutile
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        
     }
 }
