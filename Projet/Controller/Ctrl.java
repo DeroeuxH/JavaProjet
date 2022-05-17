@@ -5,8 +5,13 @@ import javax.swing.event.MouseInputListener;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.time.LocalDate;
+
 import Model.Hotel;
+import Model.Receptionniste;
+import Model.Sejour;
 import Model.Chambre;
+import Model.Client;
 import Model.Type;
 import Vue.MainVue;
 
@@ -79,18 +84,79 @@ public class Ctrl implements ActionListener {
                 break;
             }
             else if (i == h.getVectorClient().size()-1){
-                System.out.println("Le client demander n'a pas pû être supprimé");
-                JOptionPane.showMessageDialog(frame,"Le client demander n'a pas pû être supprimé");
+                System.out.println("Le client demandé n'existe pas et n'a donc pas été supprimé");
+                JOptionPane.showMessageDialog(frame,"Le client demandé n'existe pas et n'a donc pas été supprimé");
+            }
+        }
+    }
+
+    //gestion Réceptionniste
+    public static void addReceptionnisteButtonClicked(ActionEvent e,Hotel h){
+        JFrame frame = new JFrame();
+        String n = JOptionPane.showInputDialog(frame,"Veuillez entrer le nom du nouveau réceptionniste");
+        String p = JOptionPane.showInputDialog(frame,"Veuillez entrer le prénom du nouveau réceptionniste");
+        h.addReceptionniste(n, p);
+    }
+
+    public static void delReceptionnisteButtonClicked(ActionEvent e,Hotel h){
+        JFrame frame = new JFrame();
+        String n = JOptionPane.showInputDialog(frame,"Veuillez entrer le  nom du  réceptionniste à supprimer");
+        String p = JOptionPane.showInputDialog(frame,"Veuillez entrer le  prénom du  réceptionniste à supprimer");
+        for (int i=0; i<h.getVectorReceptionniste().size();i++){
+            if (h.getVectorReceptionniste().get(i).nom.equals(n) && h.getVectorReceptionniste().get(i).prenom.equals(p)){
+                h.getVectorReceptionniste().remove(i);
+                System.out.println("Réceptionniste supprimé avec succès");
+                JOptionPane.showMessageDialog(frame,"Réceptionniste supprimé avec succès");
+                break;
+            }
+            else if (i == h.getVectorReceptionniste().size()-1){
+                System.out.println("Le réceptionniste demandé n'existe pas et n'a donc pas été supprimé");
+                JOptionPane.showMessageDialog(frame,"Le réceptionniste demandé n'existe pas et n'a donc pas été supprimé");
             }
         }
     }
 
     //gestion réservations
     public static void addReservationButtonClicked(ActionEvent e,Hotel h){
-
+        JFrame frame = new JFrame();
+        int chambre = Integer.parseInt(JOptionPane.showInputDialog(frame, "Veuillez entrer le numéro de la chambre que vous souhaitez réserver"));
+        Chambre c = h.getVectorChambre().get(chambre);
+        String result;
+        String receptionniste = JOptionPane.showInputDialog(frame, "Veuillez entrer le nom du réceptionniste");
+        Receptionniste rcpst = null;
+        for (int i=0; i<h.getVectorReceptionniste().size();i++){
+            if(h.getVectorReceptionniste().get(i).nom.equals(receptionniste)){
+                rcpst = h.getVectorReceptionniste().get(i);
+                break;
+            }
+            else if (i==h.getVectorReceptionniste().size()-1){
+                JOptionPane.showMessageDialog(frame,"Erreur le réceptionniste n'existe pas");
+                return;
+            }
+        }
+        String client = JOptionPane.showInputDialog(frame, "Veuillez entrer le nom du client");
+        Client ct = null;
+        for (int i=0; i<h.getVectorClient().size();i++){
+            if(h.getVectorClient().get(i).nom.equals(client)){
+                ct = h.getVectorClient().get(i);
+                break;
+            }
+            else if (i==h.getVectorReceptionniste().size()-1){
+                JOptionPane.showMessageDialog(frame,"Erreur le client n'existe pas");
+                return;
+            }
+        }
+        LocalDate dbt = LocalDate.parse(JOptionPane.showInputDialog(frame, "Veuillez entrer la date (année-mois-jour) de début du séjour sous ce format: 2020-01-08"));
+        LocalDate fn = LocalDate.parse(JOptionPane.showInputDialog(frame, "Veuillez entrer la date (année-mois-jour) de fin du séjour sous ce format: 2020-01-08"));
+        result = c.addRes(dbt, fn, ct, rcpst);
+        JOptionPane.showMessageDialog(frame,result);
     }
 
     public static void modReservationButtonClicked(ActionEvent e,Hotel h){
+
+    }
+
+    public static void delReservationButtonClicked(ActionEvent e, Hotel h){
 
     }
 
@@ -106,7 +172,7 @@ public class Ctrl implements ActionListener {
     // rappel: facturation = (prix chambre * (fn-dbt)) + (parcourir le résultat de Extra.getExtra() 
     // et pour chaque indice faire (listeExtra[i].getPrix() * getQte)
 
-    public static void factureButtonClicked(ActionEvent e){
+    public static void factureButtonClicked(ActionEvent e,Hotel h){
 
     }
 

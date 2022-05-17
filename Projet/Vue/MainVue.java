@@ -44,6 +44,14 @@ public class MainVue extends Ctrl{
         delClientButton.addActionListener((e) -> delClientButtonClicked(e, hotel));
         mainJPanel.add(delClientButton);
 
+        //Receptionniste
+        JButton addReceptionnisteButton = new JButton("Ajouter Réceptionniste");
+        addReceptionnisteButton.addActionListener((e) -> addReceptionnisteButtonClicked(e, hotel));
+        mainJPanel.add(addReceptionnisteButton);
+        JButton delReceptionnisteButton = new JButton("Supprimer Réceptionniste");
+        delReceptionnisteButton.addActionListener((e) -> delReceptionnisteButtonClicked(e, hotel));
+        mainJPanel.add(delReceptionnisteButton);
+
         //Reservation
         JButton addReservationButton = new JButton("Ajouter Réservation");
         addReservationButton.addActionListener((e) -> addReservationButtonClicked(e, hotel));
@@ -57,6 +65,12 @@ public class MainVue extends Ctrl{
         addSejourButton.addActionListener((e) -> addSejourButtonClicked(e, hotel));
         mainJPanel.add(addSejourButton);
         //Extra
+        JButton addExtraButton = new JButton("Ajouter Extra");
+        addExtraButton.addActionListener((e) -> addExtraButtonClicked(e, hotel));
+        mainJPanel.add(addExtraButton);
         //Facturation
+        JButton askFacturatioButton = new JButton("Demander Facturation");
+        askFacturatioButton.addActionListener((e) -> factureButtonClicked(e, hotel));
+        mainJPanel.add(askFacturatioButton);
     }
 }

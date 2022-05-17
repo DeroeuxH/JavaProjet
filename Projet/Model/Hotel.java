@@ -49,5 +49,4 @@ public class Hotel {
     public Vector<Receptionniste> getVectorReceptionniste() {
         return listeRcpst;
     }
-
 }

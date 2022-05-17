@@ -23,22 +23,29 @@ public class Chambre {
 
     public int numero, etage, prix;
     public Type type;
-    public Vector<Reservation> listRes = new Vector<Reservation>();
+    public Vector<Reservation> listeRes = new Vector<Reservation>();
     public Vector<Intervention> listeChambre = new Vector<Intervention>();
 
-    public void addRes(LocalDate dbt, LocalDate fn, Client ct, Sejour sej, Receptionniste rcpst) {
+    public String addRes(LocalDate dbt, LocalDate fn, Client ct, Receptionniste rcpst) {
 
-        Reservation res = new Reservation(dbt, fn, ct, sej, rcpst, Chambre.this);
-        res.isfree();
-        listRes.add(res);
-        ct.addRes(res);
+        Reservation res = new Reservation(dbt, fn, ct, rcpst, this);
+        if (res.isfree()) {
+            listeRes.add(res);
+            ct.addRes(res);
+            rcpst.addRes(res);
+            return "Réservation créé";
+        } else
+            return "Echec création de réservation: la chambre n'est pas libre pour la date demandé";
     }
 
-    public void annulRes(LocalDate dbt, LocalDate fn) {
-        for (int i = 0; i < listRes.size(); i++) {
-            if (listRes.get(i).debut.equals(dbt) && listRes.get(i).fin.equals(fn))
-                listRes.remove(i);
+    public String annulRes(LocalDate dbt, LocalDate fn) {
+        for (int i = 0; i < listeRes.size(); i++) {
+            if (listeRes.get(i).debut.equals(dbt) && listeRes.get(i).fin.equals(fn)) {
+                listeRes.remove(i);
+                return "Réservation supprimée";
+            }
         }
+        return "Echec de suppression de réservation: aucune réservation correspondant à la date trouvé";
     }
 
     public int getNum() {
@@ -62,19 +69,22 @@ public class Chambre {
     }
 
     public Vector<Reservation> getRes() {
-        return listRes;
+        return listeRes;
     }
 
-    public void setNum(int x){
-        numero=x;
+    public void setNum(int x) {
+        numero = x;
     }
-    public void setEtg(int x){
-        etage=x;
+
+    public void setEtg(int x) {
+        etage = x;
     }
-    public void setPrix(int x){
-        prix=x;
+
+    public void setPrix(int x) {
+        prix = x;
     }
-    public void setType(Type x){
-        type=x;
+
+    public void setType(Type x) {
+        type = x;
     }
 }

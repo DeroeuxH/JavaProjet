@@ -10,7 +10,8 @@ public class Receptionniste extends Personne {
 
     public Vector<Reservation> listeRes = new Vector<Reservation>();
 
-    public void addRes() {
+    public void addRes(Reservation r) {
+        listeRes.add(r);
     }
 
     public String getName() {
