@@ -1,103 +1,58 @@
 package Vue;
 
-import java.awt.*;
 import javax.swing.*;
+
+import org.w3c.dom.events.MouseEvent;
+
+import java.awt.*;
+import java.awt.event.*;
 import Model.Chambre;
 import Model.Hotel;
 import Model.Type;
+import Controller.Ctrl;
 
-public class MainVue {
+public class MainVue extends Ctrl{
 
     public static void main(String Args[]) {
+        //Hotel de test
+        Hotel hotel = new Hotel("chezmoi", "le bahut");
+
+        //Main Frame
         JFrame mainJFrame = new JFrame("Menu Principal");
         mainJFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainJFrame.setSize(new Dimension(1920, 1080));
+        mainJFrame.setSize(new Dimension(1280, 720));
         mainJFrame.setLocationRelativeTo(null);
         mainJFrame.setVisible(true);
 
-        JToolBar mainToolBar = new JToolBar();
-        JButton réceptionniste = new JButton("Réceptionniste");
-        JButton agentEntretien = new JButton("Agent Entretien");
-        JButton chambre = new JButton("Chambre");
-        JButton réservation = new JButton("Réservation");
-        mainToolBar.add(réceptionniste);
-        mainToolBar.add(agentEntretien);
-        mainToolBar.add(chambre);
-        mainToolBar.add(réservation);
-
-        DefaultListModel<Chambre> classDefaultListModel = new DefaultListModel<>();
-
-        Hotel hotel = new Hotel("chezmoi", "le bahut");
-        hotel.getVectorChambre().add(new Chambre(1, 0, 50, Type.NORMAL));
-        hotel.getVectorChambre().add(new Chambre(2, 0, 75, Type.DOUBLE));
-        hotel.getVectorChambre().add(new Chambre(3, 0, 100, Type.SIMPLE));
-
-        for (int i = 0; i < hotel.getVectorChambre().size(); i++) {
-            classDefaultListModel.add(i, hotel.getVectorChambre().get(i));
-            System.out.println(classDefaultListModel.get(i));
-        }
-
-        JComponent classJList = new JList(classDefaultListModel);
-
+        //MainPanel
         JPanel mainJPanel = (JPanel) mainJFrame.getContentPane();
-        mainJPanel.setLayout(new BorderLayout());
-        mainJPanel.add(mainToolBar, BorderLayout.NORTH);
-        // contentPane.add(paneClass,BorderLayout.WEST);
-        mainJPanel.add(classJList, BorderLayout.WEST);
-        System.out.println(classJList.isShowing());
+        mainJPanel.setLayout(new GridLayout(0,2,5,40));
 
-        // Seconde fenêtre pour ajouter un objet
-        JFrame addJFrame = new JFrame("Ajouter une Chambre");
-        addJFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        addJFrame.setSize(new Dimension(1280, 720));
-        addJFrame.setLocationRelativeTo(null);
-        addJFrame.setLayout(new BorderLayout());
+        //Chambre
+        JButton addChambreButton = new JButton("Ajouter Chambre");
+        addChambreButton.addActionListener(ActionEvent e);
+        mainJPanel.add(addChambreButton);
+        JButton delChambreButton = new JButton("Supprimer Chambre");
+        addChambreButton.addActionListener();
+        mainJPanel.add(delChambreButton);
+        
 
-        JPanel addJPanel = (JPanel) addJFrame.getContentPane();
-        addJPanel.setLayout(new BorderLayout());
+        //Receptionniste
+        JButton addReceptionnisteButton = new JButton("Ajouter Receptionniste");
+        mainJPanel.add(addReceptionnisteButton);
+        JButton delReceptionnisteButton = new JButton("Supprimer Receptionniste");
+        mainJPanel.add(delReceptionnisteButton);
 
-        JPanel addJPanelSouth = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 0));
-        JPanel addJPanelCenter = new JPanel(new GridLayout(4, 1, 0, 0));
-        JPanel addJPanelFlow1 = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
-        JPanel addJPanelFlow2 = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
-        JPanel addJPanelFlow3 = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
-        JPanel addJPanelFlow4 = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
+        //Agent Entretien
+        JButton addAgentEntretienButton = new JButton("Ajouter AgentEntretien");
+        mainJPanel.add(addAgentEntretienButton);
+        JButton delAgentEntretienButton = new JButton("Supprimer AgentEntretien");
+        mainJPanel.add(delAgentEntretienButton);
 
-        JButton confirmer = new JButton("confirmer");
-        confirmer.setSize(100, 25);
-
-        JTextField numero = (new JTextField("Numéro: "));
-        JTextField numeroinput = new JTextField("");
-        numeroinput.setColumns(4);
-
-        JTextField etage = (new JTextField("Etage: "));
-        JTextField etageinput = (new JTextField(""));
-        etageinput.setColumns(4);
-
-        JTextField prix = (new JTextField("Prix: "));
-        JTextField prixinput = (new JTextField(""));
-        prixinput.setColumns(5);
-
-        JTextField type = (new JTextField("Type: "));
-        JTextField typeinput = (new JTextField(""));
-        typeinput.setColumns(13);
-
-        addJPanelFlow1.add(numero);
-        addJPanelFlow1.add(numeroinput);
-        addJPanelFlow2.add(etage);
-        addJPanelFlow2.add(etageinput);
-        addJPanelFlow3.add(prix);
-        addJPanelFlow3.add(prixinput);
-        addJPanelFlow4.add(type);
-        addJPanelFlow4.add(typeinput);
-
-        addJPanel.add(addJPanelSouth, BorderLayout.SOUTH);
-        addJPanelSouth.add(confirmer);
-        addJPanel.add(addJPanelCenter, BorderLayout.CENTER);
-        addJPanelCenter.add(addJPanelFlow1);
-        addJPanelCenter.add(addJPanelFlow2);
-        addJPanelCenter.add(addJPanelFlow3);
-        addJPanelCenter.add(addJPanelFlow4);
-        addJFrame.setVisible(true);
+        //Reservation
+        JButton addReservationButton = new JButton("Ajouter Reservation");
+        mainJPanel.add(addReservationButton);
+        JButton delReservationButton = new JButton("Supprimer Reservation");
+        mainJPanel.add(delReservationButton);
     }
 }
