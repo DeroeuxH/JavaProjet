@@ -59,6 +59,9 @@ public class MainVue extends Ctrl{
         JButton modReservationButton = new JButton("Modifier Réservation");
         modReservationButton.addActionListener((e) -> modReservationButtonClicked(e, hotel));
         mainJPanel.add(modReservationButton);
+        JButton delReservationButton = new JButton("Supprimer Réservation");
+        delReservationButton.addActionListener((e) -> delReservationButtonClicked(e, hotel));
+        mainJPanel.add(delReservationButton);
 
         //Séjour
         JButton addSejourButton = new JButton("Ajouter Séjour");
