@@ -1,4 +1,5 @@
 package Model;
+
 import java.time.*;
 
 public class Intervention {
@@ -13,16 +14,16 @@ public class Intervention {
     public AgentEntretien interA;
     public Chambre interC;
 
-    public LocalDate getDate(){
+    public LocalDate getDate() {
         return date;
     }
-    
-    public AgentEntretien getAgent(){
+
+    public AgentEntretien getAgent() {
         return interA;
     }
-    
-    public Chambre getChambre(){
+
+    public Chambre getChambre() {
         return interC;
     }
-    
+
 }

@@ -1,4 +1,5 @@
 package Model;
+
 import java.util.*;
 
 public class Receptionniste extends Personne {
@@ -12,15 +13,15 @@ public class Receptionniste extends Personne {
     public void addRes() {
     }
 
-    public String getName(){
+    public String getName() {
         return nom;
     }
 
-    public String getFirstName(){
+    public String getFirstName() {
         return prenom;
     }
 
-    public Vector<Reservation> getRes(){
+    public Vector<Reservation> getRes() {
         return listeRes;
     }
 

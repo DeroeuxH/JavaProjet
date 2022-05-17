@@ -1,16 +1,17 @@
 package Model;
+
 import java.time.*;
 
 public class Reservation {
 
     public Reservation(LocalDate dbt, LocalDate fn, Client ct, Sejour sej, Receptionniste rcpst, Chambre chb) {
-            debut = dbt;
-            fin = fn;
-            clt = ct;
-            sjr = sej;
-            rcp = rcpst;
-            chbr = chb;
-            numero = chbr.numero;
+        debut = dbt;
+        fin = fn;
+        clt = ct;
+        sjr = sej;
+        rcp = rcpst;
+        chbr = chb;
+        numero = chbr.numero;
     }
 
     public LocalDate debut, fin;
@@ -43,31 +44,31 @@ public class Reservation {
         return false;
     }
 
-    public LocalDate getFin(){
+    public LocalDate getFin() {
         return fin;
     }
 
-    public LocalDate getDeb(){
+    public LocalDate getDeb() {
         return debut;
     }
 
-    public int getNum(){
+    public int getNum() {
         return numero;
     }
 
-    public Client getClient(){
+    public Client getClient() {
         return clt;
     }
 
-    public Sejour getSejour(){
+    public Sejour getSejour() {
         return sjr;
     }
 
-    public Receptionniste getReceptionniste(){
+    public Receptionniste getReceptionniste() {
         return rcp;
     }
 
-    public Chambre getChambre(){
+    public Chambre getChambre() {
         return chbr;
     }
 }

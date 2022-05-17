@@ -1,5 +1,4 @@
 package Model;
-import java.util.*;
 
 public class Produit {
 
@@ -12,25 +11,29 @@ public class Produit {
     public String nom;
     public int prix, quantite;
 
-    /*public Vector<Extra> listePdt = new Vector<Extra>();
+    /*
+     * public Vector<Extra> listePdt = new Vector<Extra>();
+     * 
+     * public void addPdt(){
+     * listePdt.add(this);
+     * }
+     */
 
-    public void addPdt(){
-        listePdt.add(this);
-    }*/
-
-    public String getName(){
+    public String getName() {
         return nom;
     }
 
-    public int getPrix(){
+    public int getPrix() {
         return prix;
     }
 
-    public int getQte(){
+    public int getQte() {
         return quantite;
     }
 
-    /*public Vector<Extra> getExtra(){
-        return listePdt;
-    }*/
+    /*
+     * public Vector<Extra> getExtra(){
+     * return listePdt;
+     * }
+     */
 }

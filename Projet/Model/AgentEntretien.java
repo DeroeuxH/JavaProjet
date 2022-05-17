@@ -1,4 +1,5 @@
 package Model;
+
 import java.time.LocalDate;
 import java.util.*;
 
@@ -14,15 +15,15 @@ public class AgentEntretien extends Personne {
         listeInter.add(new Intervention(d, this, c));
     }
 
-    public String getName(){
+    public String getName() {
         return nom;
     }
 
-    public String getFirstName(){
+    public String getFirstName() {
         return prenom;
     }
 
-    public Vector<Intervention> getListe(){
+    public Vector<Intervention> getListe() {
         return listeInter;
     }
 }

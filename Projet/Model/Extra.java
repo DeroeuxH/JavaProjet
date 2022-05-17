@@ -1,4 +1,5 @@
 package Model;
+
 import java.util.*;
 
 public class Extra {
@@ -17,15 +18,15 @@ public class Extra {
         listeExtra.add(p);
     }
 
-    public int getQte(){
+    public int getQte() {
         return quantite;
     }
 
-    public Sejour getSejour(){
+    public Sejour getSejour() {
         return sjr;
     }
 
-    public Vector<Produit> getExtra(){
+    public Vector<Produit> getExtra() {
         return listeExtra;
     }
 

@@ -1,4 +1,5 @@
 package Model;
+
 import java.util.*;
 
 public class Client extends Personne {
@@ -9,7 +10,7 @@ public class Client extends Personne {
 
     public Vector<Reservation> listeRes = new Vector<Reservation>();
 
-    public void addRes(Reservation r){
+    public void addRes(Reservation r) {
         listeRes.add(r);
     }
 
@@ -18,19 +19,19 @@ public class Client extends Personne {
         r.chbr.annulRes(r.debut, r.fin);
     }
 
-    public Client getClient(){
+    public Client getClient() {
         return this;
     }
 
-    public String getName(){
+    public String getName() {
         return nom;
     }
 
-    public String getFirstName(){
+    public String getFirstName() {
         return prenom;
     }
 
-    public Vector<Reservation> getRes(){
+    public Vector<Reservation> getRes() {
         return listeRes;
     }
 

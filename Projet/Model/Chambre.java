@@ -1,4 +1,5 @@
 package Model;
+
 import java.util.*;
 import java.time.*;
 
@@ -32,27 +33,27 @@ public class Chambre {
         }
     }
 
-    public int getNum(){
+    public int getNum() {
         return numero;
     }
 
-    public int getEtg(){
+    public int getEtg() {
         return etage;
     }
 
-    public int getPrix(){
+    public int getPrix() {
         return prix;
     }
 
-    public Type getType(){
+    public Type getType() {
         return type;
     }
 
-    public Vector<Intervention> getInter(){
+    public Vector<Intervention> getInter() {
         return listeChambre;
     }
 
-    public Vector<Reservation> getRes(){
+    public Vector<Reservation> getRes() {
         return listRes;
     }
 }
