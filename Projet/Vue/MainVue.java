@@ -30,29 +30,10 @@ public class MainVue extends Ctrl{
 
         //Chambre
         JButton addChambreButton = new JButton("Ajouter Chambre");
-        addChambreButton.addActionListener(ActionEvent e);
+        addChambreButton.addActionListener((e) -> addChambreButtonClicked(e));
         mainJPanel.add(addChambreButton);
-        JButton delChambreButton = new JButton("Supprimer Chambre");
-        addChambreButton.addActionListener();
-        mainJPanel.add(delChambreButton);
-        
-
-        //Receptionniste
-        JButton addReceptionnisteButton = new JButton("Ajouter Receptionniste");
-        mainJPanel.add(addReceptionnisteButton);
-        JButton delReceptionnisteButton = new JButton("Supprimer Receptionniste");
-        mainJPanel.add(delReceptionnisteButton);
-
-        //Agent Entretien
-        JButton addAgentEntretienButton = new JButton("Ajouter AgentEntretien");
-        mainJPanel.add(addAgentEntretienButton);
-        JButton delAgentEntretienButton = new JButton("Supprimer AgentEntretien");
-        mainJPanel.add(delAgentEntretienButton);
-
-        //Reservation
-        JButton addReservationButton = new JButton("Ajouter Reservation");
-        mainJPanel.add(addReservationButton);
-        JButton delReservationButton = new JButton("Supprimer Reservation");
-        mainJPanel.add(delReservationButton);
+        JButton modChambreButton = new JButton("Modifier Chambre");
+        modChambreButton.addActionListener((e) -> modChambreButtonClicked(e));
+        mainJPanel.add(modChambreButton);
     }
 }

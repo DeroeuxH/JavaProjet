@@ -56,4 +56,17 @@ public class Chambre {
     public Vector<Reservation> getRes() {
         return listRes;
     }
+
+    public void setNum(int x){
+        numero=x;
+    }
+    public void setEtg(int x){
+        etage=x;
+    }
+    public void setPrix(int x){
+        prix=x;
+    }
+    public void setType(Type x){
+        type=x;
+    }
 }
