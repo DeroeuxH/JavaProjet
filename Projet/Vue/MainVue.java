@@ -30,10 +30,33 @@ public class MainVue extends Ctrl{
 
         //Chambre
         JButton addChambreButton = new JButton("Ajouter Chambre");
-        addChambreButton.addActionListener((e) -> addChambreButtonClicked(e));
+        addChambreButton.addActionListener((e) -> addChambreButtonClicked(e, hotel));
         mainJPanel.add(addChambreButton);
         JButton modChambreButton = new JButton("Modifier Chambre");
-        modChambreButton.addActionListener((e) -> modChambreButtonClicked(e));
+        modChambreButton.addActionListener((e) -> modChambreButtonClicked(e, hotel));
         mainJPanel.add(modChambreButton);
+
+        //Client
+        JButton addClientButton = new JButton("Ajouter Client");
+        addClientButton.addActionListener((e) -> addClientButtonClicked(e, hotel));
+        mainJPanel.add(addClientButton);
+        JButton delClientButton = new JButton("Supprimer Client");
+        delClientButton.addActionListener((e) -> delClientButtonClicked(e, hotel));
+        mainJPanel.add(delClientButton);
+
+        //Reservation
+        JButton addReservationButton = new JButton("Ajouter Réservation");
+        addReservationButton.addActionListener((e) -> addReservationButtonClicked(e, hotel));
+        mainJPanel.add(addReservationButton);
+        JButton modReservationButton = new JButton("Modifier Réservation");
+        modReservationButton.addActionListener((e) -> modReservationButtonClicked(e, hotel));
+        mainJPanel.add(modReservationButton);
+
+        //Séjour
+        JButton addSejourButton = new JButton("Ajouter Séjour");
+        addSejourButton.addActionListener((e) -> addSejourButtonClicked(e, hotel));
+        mainJPanel.add(addSejourButton);
+        //Extra
+        //Facturation
     }
 }

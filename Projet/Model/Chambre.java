@@ -5,6 +5,14 @@ import java.time.*;
 
 public class Chambre {
 
+    public Chambre() {
+        numero = 0;
+        etage = 0;
+        prix = 0;
+        type = Type.NORMAL;
+
+    }
+
     public Chambre(int num, int etg, int prx, Type typ) {
         numero = num;
         etage = etg;
