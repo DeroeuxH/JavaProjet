@@ -5,26 +5,17 @@ import java.time.*;
 
 public class Chambre {
 
-    public Chambre() {
-        numero = 0;
-        etage = 0;
-        prix = 0;
-        type = Type.NORMAL;
-
-    }
-
     public Chambre(int num, int etg, int prx, Type typ) {
         numero = num;
         etage = etg;
         prix = prx;
         type = typ;
-
     }
 
     public int numero, etage, prix;
     public Type type;
     public Vector<Reservation> listeRes = new Vector<Reservation>();
-    public Vector<Intervention> listeChambre = new Vector<Intervention>();
+    public Vector<Intervention> listeIntervention = new Vector<Intervention>();
 
     public String addRes(LocalDate dbt, LocalDate fn, Client ct, Receptionniste rcpst) {
 
@@ -64,11 +55,11 @@ public class Chambre {
         return type;
     }
 
-    public Vector<Intervention> getInter() {
-        return listeChambre;
+    public Vector<Intervention> getVectorInter() {
+        return listeIntervention;
     }
 
-    public Vector<Reservation> getRes() {
+    public Vector<Reservation> getVectorRes() {
         return listeRes;
     }
 

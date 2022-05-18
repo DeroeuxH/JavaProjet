@@ -4,29 +4,25 @@ import java.util.*;
 
 public class Extra {
 
-    public Extra(int qte, Sejour sej) {
+    public Extra(Produit p, int qte) {
+        nom = p.nom;
         quantite = qte;
-        sjr = sej;
     }
 
+    public String nom;
     public int quantite;
-    public Sejour sjr;
 
-    public Vector<Produit> listeExtra = new Vector<Produit>();
+    public Vector<Extra> listeExtra = new Vector<Extra>();
 
-    public void addPdt(Produit p) {
-        listeExtra.add(p);
+    public String getNom() {
+        return nom;
     }
 
     public int getQte() {
         return quantite;
     }
 
-    public Sejour getSejour() {
-        return sjr;
-    }
-
-    public Vector<Produit> getExtra() {
+    public Vector<Extra> getVectorExtra() {
         return listeExtra;
     }
 

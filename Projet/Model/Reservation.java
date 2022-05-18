@@ -11,7 +11,7 @@ public class Reservation {
         rcp = rcpst;
         chbr = chb;
         numero = chbr.numero;
-        
+        sejour = null;
     }
 
     public LocalDate debut, fin;
@@ -19,6 +19,7 @@ public class Reservation {
     public Client clt;
     public Receptionniste rcp;
     public Chambre chbr;
+    public Sejour sejour;
 
     public boolean isfree() { // parcours liste res
         for (int i = 0; i < chbr.listeRes.size(); i++) {

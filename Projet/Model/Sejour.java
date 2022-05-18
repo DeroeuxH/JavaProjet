@@ -17,8 +17,8 @@ public class Sejour {
     public Reservation res;
     public Vector<Extra> listeExtra = new Vector<Extra>();
 
-    public void addSjr() {
-
+    public void addExtra(Extra x) {
+        listeExtra.add(x);
     }
 
     public LocalDate getDeb() {
@@ -37,8 +37,7 @@ public class Sejour {
         return res;
     }
 
-    public Vector<Extra> getExtra() {
+    public Vector<Extra> getVectorExtra() {
         return listeExtra;
     }
-
 }

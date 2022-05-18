@@ -1,34 +1,35 @@
 package Vue;
 
 import javax.swing.*;
-
-import org.w3c.dom.events.MouseEvent;
-
 import java.awt.*;
-import java.awt.event.*;
-import Model.Chambre;
 import Model.Hotel;
-import Model.Type;
 import Controller.Ctrl;
 
-public class MainVue extends Ctrl{
+public class MainVue extends Ctrl {
 
     public static void main(String Args[]) {
-        //Hotel de test
-        Hotel hotel = new Hotel("chezmoi", "le bahut");
 
-        //Main Frame
+        // Hotel de test
+        Hotel hotel = new Hotel("chezmoi", "le bahut");
+        // Chaque chambre sera approvisionné de 10qté
+        // Pour chaque qté donné à extra, la supprimer de produit
+        hotel.addProduit("Cola", 3, 1000);
+        hotel.addProduit("Bière", 4, 10000);
+        hotel.addProduit("Eau gazeuse", 2, 2000);
+        // Hotel de test
+
+        // Main Frame
         JFrame mainJFrame = new JFrame("Menu Principal");
         mainJFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainJFrame.setSize(new Dimension(1280, 720));
         mainJFrame.setLocationRelativeTo(null);
         mainJFrame.setVisible(true);
 
-        //MainPanel
+        // MainPanel
         JPanel mainJPanel = (JPanel) mainJFrame.getContentPane();
-        mainJPanel.setLayout(new GridLayout(0,2,5,40));
+        mainJPanel.setLayout(new GridLayout(0, 2, 5, 40));
 
-        //Chambre
+        // Chambre
         JButton addChambreButton = new JButton("Ajouter Chambre");
         addChambreButton.addActionListener((e) -> addChambreButtonClicked(e, hotel));
         mainJPanel.add(addChambreButton);
@@ -36,7 +37,7 @@ public class MainVue extends Ctrl{
         modChambreButton.addActionListener((e) -> modChambreButtonClicked(e, hotel));
         mainJPanel.add(modChambreButton);
 
-        //Client
+        // Client
         JButton addClientButton = new JButton("Ajouter Client");
         addClientButton.addActionListener((e) -> addClientButtonClicked(e, hotel));
         mainJPanel.add(addClientButton);
@@ -44,7 +45,7 @@ public class MainVue extends Ctrl{
         delClientButton.addActionListener((e) -> delClientButtonClicked(e, hotel));
         mainJPanel.add(delClientButton);
 
-        //Receptionniste
+        // Receptionniste
         JButton addReceptionnisteButton = new JButton("Ajouter Réceptionniste");
         addReceptionnisteButton.addActionListener((e) -> addReceptionnisteButtonClicked(e, hotel));
         mainJPanel.add(addReceptionnisteButton);
@@ -52,7 +53,18 @@ public class MainVue extends Ctrl{
         delReceptionnisteButton.addActionListener((e) -> delReceptionnisteButtonClicked(e, hotel));
         mainJPanel.add(delReceptionnisteButton);
 
-        //Reservation
+        // Agent Entretien
+        JButton addAgentButton = new JButton("Ajouter Agent d'entretien");
+        addAgentButton.addActionListener((e) -> addAgentButtonClicked(e, hotel));
+        mainJPanel.add(addAgentButton);
+        JButton delAgentButton = new JButton("Supprimer Agent d'entretien");
+        delAgentButton.addActionListener((e) -> delAgentButtonClicked(e, hotel));
+        mainJPanel.add(delAgentButton);
+        JButton addInterButton = new JButton("Ajouter Intervention pour Agent d'entretien");
+        addInterButton.addActionListener((e) -> addInterButtonClicked(e, hotel));
+        mainJPanel.add(addInterButton);
+
+        // Reservation
         JButton addReservationButton = new JButton("Ajouter Réservation");
         addReservationButton.addActionListener((e) -> addReservationButtonClicked(e, hotel));
         mainJPanel.add(addReservationButton);
@@ -63,17 +75,17 @@ public class MainVue extends Ctrl{
         delReservationButton.addActionListener((e) -> delReservationButtonClicked(e, hotel));
         mainJPanel.add(delReservationButton);
 
-        //Séjour
+        // Séjour
         JButton addSejourButton = new JButton("Ajouter Séjour");
         addSejourButton.addActionListener((e) -> addSejourButtonClicked(e, hotel));
         mainJPanel.add(addSejourButton);
-        //Extra
+        // Extra
         JButton addExtraButton = new JButton("Ajouter Extra");
         addExtraButton.addActionListener((e) -> addExtraButtonClicked(e, hotel));
         mainJPanel.add(addExtraButton);
-        //Facturation
-        JButton askFacturatioButton = new JButton("Demander Facturation");
-        askFacturatioButton.addActionListener((e) -> factureButtonClicked(e, hotel));
-        mainJPanel.add(askFacturatioButton);
+        // Facturation
+        JButton askFacturationButton = new JButton("Demander Facturation");
+        askFacturationButton.addActionListener((e) -> factureButtonClicked(e, hotel));
+        mainJPanel.add(askFacturationButton);
     }
 }

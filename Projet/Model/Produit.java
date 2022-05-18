@@ -11,14 +11,6 @@ public class Produit {
     public String nom;
     public int prix, quantite;
 
-    /*
-     * public Vector<Extra> listePdt = new Vector<Extra>();
-     * 
-     * public void addPdt(){
-     * listePdt.add(this);
-     * }
-     */
-
     public String getName() {
         return nom;
     }
@@ -30,10 +22,4 @@ public class Produit {
     public int getQte() {
         return quantite;
     }
-
-    /*
-     * public Vector<Extra> getExtra(){
-     * return listePdt;
-     * }
-     */
 }

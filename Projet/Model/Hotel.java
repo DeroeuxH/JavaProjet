@@ -8,6 +8,7 @@ public class Hotel {
     Vector<Chambre> listeChambre = new Vector<Chambre>();
     Vector<AgentEntretien> listeAgeEnt = new Vector<AgentEntretien>();
     Vector<Receptionniste> listeRcpst = new Vector<Receptionniste>();
+    Vector<Produit> listeProduit = new Vector<Produit>();
 
     public Hotel(String adr, String n) {
         adress = adr;
@@ -30,6 +31,10 @@ public class Hotel {
         listeRcpst.add(new Receptionniste(n, p));
     }
 
+    public void addProduit(String n, int prx, int qte) {
+        listeProduit.add(new Produit(n, prx, qte));
+    }
+
     public Hotel getHotel() {
         return this;
     }
@@ -48,5 +53,9 @@ public class Hotel {
 
     public Vector<Receptionniste> getVectorReceptionniste() {
         return listeRcpst;
+    }
+
+    public Vector<Produit> getVectorProduit() {
+        return listeProduit;
     }
 }
