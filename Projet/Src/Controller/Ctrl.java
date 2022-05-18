@@ -297,10 +297,11 @@ public class Ctrl implements ActionListener {
         }
         Sejour sejour = reservation.sejour;
         String ajout = JOptionPane.showInputDialog(frame, "Veuillez entrer le nom du produit que vous souhaitez ajouter");
+        int qte = Integer.parseInt(JOptionPane.showInputDialog(frame, "Veuillez entrer le nom du produit que vous souhaitez ajouter"));
         for (int i=0;i<h.getVectorProduit().size();i++){
             if(h.getVectorProduit().get(i).nom.equals(ajout)){
-                sejour.addExtra(new Extra(h.getVectorProduit().get(i),10));
-                h.getVectorProduit().get(i).quantite=-10;
+                sejour.addExtra(new Extra(h.getVectorProduit().get(i),qte));
+                h.getVectorProduit().get(i).quantite=-qte;
                 JOptionPane.showMessageDialog(frame, "Le produit a bien été trouvé et ajouté");
                 break;
             }
@@ -336,7 +337,7 @@ public class Ctrl implements ActionListener {
             for (int i=0;i<sejour.listeExtra.size();i++){
                 for (int j=0;j<h.getVectorProduit().size();j++){
                     if (h.getVectorProduit().get(j).nom.equals(sejour.listeExtra.get(i).nom)){
-                        factureExtra += (10-sejour.listeExtra.get(i).quantite)*h.getVectorProduit().get(j).prix;
+                        factureExtra += (sejour.listeExtra.get(i).quantite)*h.getVectorProduit().get(j).prix;
                         break;
                     }
                 }
